@@ -19,7 +19,7 @@ The three LFSRs X, Y and Z have lengths equal to 19, 22, and 23 bits respectivel
 - Now we simply encrypt the image plane by plane. But to make the cipher strong, before the start of a new plane, we re-initialize the LFSRs following the same steps mentioned earlier.  
 
 ## Approach 
-Vivado Xilinx Design Suite was used to implement and simulate the circuit design.  
+Vivado Xilinx Design Suite was used to implement and simulate the circuit design. ([Detailed Report](https://github.com/san2130/I-Chip22/blob/main/Report.pdf))  
 - First the (256*256) grayscale image is converted to a hexadecimal file using a MATLAB [script](/).  
 - The contents of the hexfile is read in the testbench and stored in
 an array of 8 bit registers ‘mem’.
