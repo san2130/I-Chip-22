@@ -18,7 +18,6 @@ The three LFSRs X, Y and Z have lengths equal to 19, 22, and 23 bits respectivel
 - For example, let our image have two pixels with first pixel=8’b0111_0011 and second pixel=8’b0001_0011 then the first plane will contain only 2’b00, second plane will contain 2’b10, third again 2’b10 and so on. Similarly for other pixels. 
 - Thus, for a 256*256 image, our image will be actually broken into 8 planes of 256 x 256 pixels each.  
 - Now we simply encrypt the image plane by plane. But to make the cipher strong, before the start of a new plane, we re-initialize the LFSRs following the same steps mentioned earlier.  
-- 
  <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/ps.jpg" width="50%"/></p>  
  
 
@@ -66,3 +65,19 @@ contents are written to the output file.
 
 
  <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/conv2.jpg" width="50%"/></p>
+ 
+ ## Simulation and Results  
+ 
+<p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/input.jpg" width="30%"/><br><i>Input (256*256) Image</i>
+</p>  
+<br>
+<p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/darr.png" width="10%"/></p>
+<br>
+<p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/output.jpg" width="30%"/><br><i>Encrypted (256*256) Image</i></p>
+<br>
+<p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/darr.png" width="10%"/></p>
+<br>
+<p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/output2.jpg" width="30%"/><br><i>Decrypted (256*256) Image</i></p>
+<br>
+<br>
+<p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/waveform.jpg" width="100%"/><br><i>Simulation Waveform</i></p>
