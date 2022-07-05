@@ -23,7 +23,7 @@ The three LFSRs X, Y and Z have lengths equal to 19, 22, and 23 bits respectivel
  <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/ps.jpg" width="70%"/></p>  
  <br>
 
-## Approach 
+## Verilog Design Approach 
 Vivado Xilinx Design Suite was used to implement and simulate the circuit design. ([Detailed Report](https://github.com/san2130/I-Chip22/blob/main/Report.pdf))  
 - First the (256*256) grayscale image is converted to a hexadecimal file using a MATLAB [script](/). 
 <br>
