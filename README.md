@@ -1,4 +1,4 @@
-# A5/1 GSM Crytographic Cipher  
+# Verilog Implementation of A5/1 GSM Crytographic Cipher  
 
 ## About A5/1 Cryptographic Algorithm
 - A5/1 is a symmetric stream encryption algorithm (cipher) which is hardware-based and is used for confidentiality in GSM cell phones.  
@@ -18,7 +18,7 @@ The three LFSRs X, Y and Z have lengths equal to 19, 22, and 23 bits respectivel
 - We break the image into 8 bit-planes. Each plane contains 256 x 256 bits.
 - For example, let our image have two pixels with first pixel=8’b0111_0011 and second pixel=8’b0001_0011 then the first plane will contain only 2’b00, second plane will contain 2’b10, third again 2’b10 and so on. Similarly for other pixels. 
 - Thus, for a 256*256 image, our image will be actually broken into 8 planes of 256 x 256 pixels each.  
-- Now we simply encrypt the image plane by plane. But to make the cipher strong, before the start of a new plane, we re-initialize the LFSRs following the same steps mentioned earlier.  
+- Now we simply encrypt the image plane by plane. But to make the cipher strong, before the start of a new plane, we re-initialize the LFSRs following the same steps mentioned earlier. ([Detailed Problem Statement](https://github.com/san2130/I-Chip22/blob/main/I_CHIP-PS2.pdf)) 
 <br>
  <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/ps.jpg" width="70%"/></p>  
  <br>
