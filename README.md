@@ -12,25 +12,30 @@ The three LFSRs X, Y and Z have lengths equal to 19, 22, and 23 bits respectivel
 - A 64-bit private key K and a 22-bit public key are used as the initial values in X, Y, and Z registers. After the registers are filled with the keys, the keystream is generated through these three registers. The keystream is then XORed with the input bitstream to get the encrypted stream. 
 - For more details on generating the entire keystream refer to [this](https://www.cryptographynotes.com/2019/02/symmetric-stream-a5by1-algorithm-linear-feedback-shift-register.html)  
 <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/reg.jpg"/></p>
+<br>
 
 ## Modifications for enhancing image encryption security 
 - We break the image into 8 bit-planes. Each plane contains 256 x 256 bits.
 - For example, let our image have two pixels with first pixel=8’b0111_0011 and second pixel=8’b0001_0011 then the first plane will contain only 2’b00, second plane will contain 2’b10, third again 2’b10 and so on. Similarly for other pixels. 
 - Thus, for a 256*256 image, our image will be actually broken into 8 planes of 256 x 256 pixels each.  
 - Now we simply encrypt the image plane by plane. But to make the cipher strong, before the start of a new plane, we re-initialize the LFSRs following the same steps mentioned earlier.  
- <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/ps.jpg" width="50%"/></p>  
- 
+<br>
+ <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/ps.jpg" width="70%"/></p>  
+ <br>
 
 ## Approach 
 Vivado Xilinx Design Suite was used to implement and simulate the circuit design. ([Detailed Report](https://github.com/san2130/I-Chip22/blob/main/Report.pdf))  
 - First the (256*256) grayscale image is converted to a hexadecimal file using a MATLAB [script](/). 
+<br>
  <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/conv1.jpg" width="50%"/></p>  
+ <br>
  
 - The contents of the hexfile is read in the testbench and stored in
 an array of 8 bit registers ‘mem’.
-
+<br>
  <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/test1.jpg" width="50%"/></p>   
- 
+<br>
+
 - Now for the first 65536 positive clock edges the first bit from
 the right of every member of ‘mem’ is stored in a register of
 65535 bit size p1.
@@ -40,9 +45,10 @@ of the current plane. Plane numbers go from 1 to 8
 - Now the design module is activated and the inputs are the
 public key, private key, p1 containing the first bit of every
 pixel, clock and trigger tr. tr=1 activates the design module.
-
+<br>
  <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/design1.jpg" width="50%"/></p> 
- 
+<br>
+
 - Now in the design module, the LSFRs are initialized with
 zeros, the first 64 clock cycles are used feeding the private key
 and the next 22 are used feeding the generated public key.
@@ -62,10 +68,10 @@ the next plane is processed with the public key ending with the
 new plane number.
 - Once all the planes are processed the output register
 contents are written to the output file.
-
-
+<br>
  <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/conv2.jpg" width="50%"/></p>
- 
+<br>
+
  ## Simulation and Results  
  
 <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/input.jpg" width="30%"/><br><i>Input (256*256) Image</i>
