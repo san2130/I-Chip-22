@@ -12,7 +12,7 @@ The three LFSRs X, Y and Z have lengths equal to 19, 22, and 23 bits respectivel
 - A 64-bit private key K and a 22-bit public key are used as the initial values in X, Y, and Z registers. After the registers are filled with the keys, the keystream is generated through these three registers. The keystream is then XORed with the input bitstream to get the encrypted stream. 
 - For more details on generating the entire keystream refer to [this](https://www.cryptographynotes.com/2019/02/symmetric-stream-a5by1-algorithm-linear-feedback-shift-register.html)  
 
-## Modifications for image encryption enhanced security  
+## Modifications for enhancing image encryption security 
 - We break the image into 8 bit-planes. Each plane contains 256 x 256 bits.
 - For example, let our image have two pixels with first pixel=8’b0111_0011 and second pixel=8’b0001_0011 then the first plane will contain only 2’b00, second plane will contain 2’b10, third again 2’b10 and so on. Similarly for other pixels. 
 - Thus, for a 256*256 image, our image will be actually broken into 8 planes of 256 x 256 pixels each.  
