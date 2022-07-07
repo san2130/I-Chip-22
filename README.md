@@ -87,8 +87,10 @@ contents are written to the output file.
 <br>
 <br>
 <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/waveform.jpg" width="100%"/><br><i>Simulation Waveform</i></p>
+<br>
+<br> 
 
-<h3 align=center>Our Team</h3>
+<h2 align=center>Our Team</h2>
     
 <table align=center>
    <td align="center">
