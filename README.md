@@ -36,13 +36,13 @@ an array of 8 bit registers ‘mem’.
  <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/test1.jpg" width="50%"/></p>   
 <br>
 
-- Now for the first 65536 positive clock edges the first bit from
+- Now for the first **65536** positive clock edges the first bit from
 the right of every member of ‘mem’ is stored in a register of
 65535 bit size p1.
 - Next the public key is generated, that is by taking the first 18
 bits of the chosen public key and appending the plane number
 of the current plane. Plane numbers go from 1 to 8
-- Now the design module is activated and the inputs are the
+- Now the design module is **activated** and the inputs are the
 public key, private key, p1 containing the first bit of every
 pixel, clock and trigger tr. tr=1 activates the design module.
 <br>
@@ -50,20 +50,20 @@ pixel, clock and trigger tr. tr=1 activates the design module.
 <br>
 
 - Now in the design module, the LSFRs are initialized with
-zeros, the first 64 clock cycles are used feeding the private key
-and the next 22 are used feeding the generated public key.
-- Then 100 clock cycles with majority logic ignoring outputs and
-the next 65535 cycles generating the final cipher key for the
+zeros, the first **64** clock cycles are used feeding the **private key**
+and the next **22** are used feeding the generated **public key**.
+- Then **100** clock cycles with **majority logic** ignoring outputs and
+the next **65535** cycles generating the **final cipher key** for the
 plane.
-- Now p1 is fed to the design module in batches of 256 bits since
+- Now p1 is fed to the design module in **batches** of **256** bits since
 passing all the 65535 bits together caused memory issues.
 - For every such input batch an answer of 256 bits is produced
-by xoring the input with the cipher key. This answer is then
+by **xoring** the input with the cipher key. This answer is then
 stored in the testbench in a register of 65535 bits.
 - Once the entire plane has been processed, we have an
-encrypted plane and the bits are then reassembled and stored in
+encrypted plane and the bits are then **reassembled** and stored in
 the final output memory.
-- Then all the LSFRs are reinitialized, everything is reset and
+- Then all the LSFRs are **reinitialized**, everything is reset and
 the next plane is processed with the public key ending with the
 new plane number.
 - Once all the planes are processed the output register
