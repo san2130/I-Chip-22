@@ -87,3 +87,28 @@ contents are written to the output file.
 <br>
 <br>
 <p align="center"><img src="https://github.com/san2130/I-Chip22/blob/main/media/waveform.jpg" width="100%"/><br><i>Simulation Waveform</i></p>
+
+<h3 align=center>Our Team</h3>
+    
+<table align=center>
+   <td align="center">
+      <a href="https://github.com/san2130">
+         <img src="https://avatars.githubusercontent.com/u/88130555?v=4" width="150px;" alt=""/>
+         <br />
+         <sub>
+            <b>Sandeepan Ghosh</b>
+         </sub>
+      </a>
+      <br />
+   </td>
+   <td align="center">
+      <a href="https://github.com/sanyam-dev">
+         <img src="https://avatars.githubusercontent.com/u/56957500?v=4" width="150px" alt=""/>
+         <br />
+         <sub>
+            <b>Sanyam Jha</b>
+         </sub>
+      </a>
+      <br />
+   </td>
+</table>
